@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('Categories','CategoriesController');
 //php artisan config:cache
 //++up code++ YOUR CACHE .env FILE SHOULD DELETE too important
