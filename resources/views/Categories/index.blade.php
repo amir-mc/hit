@@ -67,7 +67,7 @@
 
             var form = document.getElementById('DelCatForm')
 
-            form.action='/Categories/' * id
+            form.action='/Categories/' + id
             console.log('deleting',form)
             //console log is just for test is not important
             
