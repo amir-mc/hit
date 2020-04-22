@@ -10,11 +10,27 @@
             <table class="table">
                 <thead>
                 <th>
-
+                    image
                 </th>
                 <th>
-
+                    title
                 </th>
                 </thead>
+
                 <tbody>
+
+                    @foreach($post as $pos)
+                       <tr>
+                           <td>
+                               <img src="{{asset($pos->image)}}" alt="">
+
+                           </td>
+                           <td>  {{$pos->title}}</td>
+                           <td><a href="" class="btn btn-info">edit</a></td>
+                           <td><a href="" class="btn btn-warning">delete</a></td>
+
+                       </tr>
+                        @endforeach
+
+                </tbody>
 @endsection
