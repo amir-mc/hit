@@ -25,18 +25,14 @@
             <label for="title">title</label>
             <input type="text" class="form-control" name="title" id="title">
         </div>
-
             <div class="form-group">
             <label for="dis">description</label>
                 <textarea name="dis" id="dis" cols="5" rows="5" class="form-control"></textarea>
-
         </div>
             <div class="form-group">
             <label for="contents">Contents</label>
                 <textarea name="contents" id="contents" cols="5" rows="5" class="form-control"></textarea>
-
         </div>
-
             <div class="form-group">
                 <label for="publish_at">Publish at</label>
                 <input type="text" class="form-control" name="publish_at" id="publish_at">
@@ -52,5 +48,8 @@
     </div>
     </div>
 @endsection
+
+
+
 
 
