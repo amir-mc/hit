@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
-//hit up
 
     <div class="card card-default">
         <div class="card-header">
-            cat creat
+           {{isset($Category)?'edit cat':'creat cat'}}
         </div>
 
         <div class="card-body">
@@ -14,17 +13,30 @@
                         {{$error}}
                     </div>
                 @endforeach
+
                 @endif
-            <form action="{{route('Categories.store')}}" method="post">
+
+            <form action="{{isset($Category)?route('Categories.update',$Category->id) :route('Categories.store')}}" method="post">
                 @csrf
+                @if(isset($Category))
+                @method('PUT')
+                @endif
                 <div class="form-group">
+
                     <label for="name">name</label>
-                    <input type="text" id="name" class="form-control" name="name">
+
+                        <input type="text" id="name" class="form-control" name="name" value="{{isset($Category)? $Category->name : ''}}">
+
                 </div>
+
+
+
                 <div class="form-group">
-                    <button class="btn btn-success">submit</button>
+                    <button class="btn btn-success">{{isset($Category)?'Update':'submit'}}</button>
                 </div>
             </form>
         </div>
     </div>
+
 @endsection
+
