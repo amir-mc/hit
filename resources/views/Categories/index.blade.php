@@ -7,18 +7,20 @@
 
     </div>
     <div class="card-body">
+        @if($cat->count()>0)
         <table class="table">
             <thead>
             <th>
                  name:
             </th>
             <th>
-
+                post:
             </th>
             </thead>
             <tbody>
             @foreach($cat as $Category)
             <tr><td>{{$Category->name}}</td>
+                <td>{{$Category->post->count()}}</td>
             <td>
 
                 <a href="{{route('Categories.edit', $Category->id)}}" class="btn btn-info">edit</a>
@@ -29,10 +31,15 @@
 
             </tbody>
         </table>
+@else
+            <h3 class="text-center">empty</h3>
         <!-- Modal -->
-        <form action="" method="post" id="DelCatForm">
+@endif
+        <form action="" method="POST" id="de">
+
             @csrf
             @method('DELETE')
+
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModallabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -56,23 +63,19 @@
     </div>
 </div>
     @endsection
-@section('script')
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 
     <script>
         function handeldelete(id) {
 
-            var form = document.getElementById('DelCatForm')
-
-            form.action='/Categories/' + id
-            console.log('deleting',form)
-            //console log is just for test is not important
-            
+            var form = document.getElementById('de')
+            form.action='/Categories/'+id
 
             $("#deleteModal").modal('show')
         }
     </script>
-@endsection
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
