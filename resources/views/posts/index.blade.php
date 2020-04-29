@@ -7,30 +7,83 @@
 
         </div>
         <div class="card-body">
-            <table class="table">
-                <thead>
-                <th>
-                    image
-                </th>
-                <th>
-                    title
-                </th>
-                </thead>
+@if($posts->count()>0)
+                <table class="table">
+                    <thead>
+                    <th>
+                        image
+                    </th>
+                    <th>
+                        title
+                    </th>
+                    <th>
+                        category
+                    </th>
+                    </thead>
 
-                <tbody>
+                    <tbody>
 
-                    @foreach($post as $pos)
-                       <tr>
-                           <td>
-                               <img src="{{asset($pos->image)}}" alt="">
 
-                           </td>
-                           <td>  {{$pos->title}}</td>
-                           <td><a href="" class="btn btn-info">edit</a></td>
-                           <td><a href="" class="btn btn-warning">delete</a></td>
 
-                       </tr>
-                        @endforeach
+                    @foreach($posts  as $post)
 
-                </tbody>
+                        <tr>
+                            <td>
+                                <img src="{{asset($post->image)}}" alt="">
+
+                            </td>
+                            <td>  {{$post->title}}</td>
+                            <td>
+
+                                <a href="{{route('Categories.edit', $post->category->id)}}">
+
+                                    {{$post->category->name}}
+
+                                </a>
+
+
+
+                            </td>
+                            <td>
+                                @if($post->trashed())
+                                    <form action="{{route('post.restore',$post->id)}}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                    <button type="submit"  class="btn btn-info">restore</button>
+                           </form>
+                            </td>
+                            @else
+
+
+
+
+                         <td>
+                             <a href="{{route('posts.edit',$post->id)}}" class="btn btn-info">   edit</a>
+
+                         </td>
+                            @endif
+                            <td>
+                                <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-warning">
+                                        {{$post->trashed()?'delete':'trash'}}
+                                    </button>
+
+                                </form>
+                            </td>
+
+                        </tr>
+                    @endforeach
+@else
+    <h3 class="text-center">empty</h3>
+@endif
+                    </tbody>
+                </table>
+
+
+
+
+        </div>
+    </div>
 @endsection
