@@ -8,14 +8,7 @@
 
     <div class="card-body">
 
-        @if($errors->any())
-            @foreach($errors->all() as $error)
-                <div class="card alert-danger">
-                    {{$error}}
-                </div>
-            @endforeach
-
-        @endif
+        @include('partials.error')
 
 
 
@@ -52,7 +45,7 @@
 
                             @if(isset($posts))
 
-                            @if($Category->id = $posts->category_id)
+                            @if($Category->id == $posts->category_id)
                             selected
                         @endif
 
