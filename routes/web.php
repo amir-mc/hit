@@ -19,10 +19,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('Categories','CategoriesController');
-Route::resource('posts','PostsController');
-Route::get('trash-post','PostsController@trash')->name('trash.posts.index');
-Route::put('restore/{post}','PostsController@restore')->name('post.restore');
-//php artisan config:cache
+
 //++up code++ YOUR CACHE .env FILE SHOULD DELETE too important
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('Categories','CategoriesController');
+    Route::resource('posts','PostsController');
+    Route::resource('tags','TagController');
+    Route::get('trash-post','PostsController@trash')->name('trash.posts.index');
+    Route::put('restore/{post}','PostsController@restore')->name('post.restore');
+//php artisan config:cache
+});
+
+
+
+
