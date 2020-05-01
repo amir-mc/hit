@@ -7,14 +7,7 @@
         </div>
 
         <div class="card-body">
-            @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <div class="card alert-danger">
-                        {{$error}}
-                    </div>
-                @endforeach
-
-                @endif
+            @include('partials.error')
 
             <form action="{{isset($Category)?route('Categories.update',$Category->id) :route('Categories.store')}}" method="post">
                 @csrf
