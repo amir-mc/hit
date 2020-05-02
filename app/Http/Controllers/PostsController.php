@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\category;
+use App\Http\Requests\post\postupdateRequest;
 use App\post;
+use App\Tags;
 use Illuminate\Http\Request;
 use App\Http\Requests\post\postRequest;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('verifyCatMid')->only(['create','store']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index')->with('po',post::all());
+        return view('posts.index')->with('posts',post::all());
     }
 
     /**
@@ -25,7 +36,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create')->with('categorys',category::all())->with('tags',Tags::all());
     }
 
     /**
@@ -46,13 +57,17 @@ class PostsController extends Controller
       $image =  $request->image->store('posts');
 
 
-        post::create([
+       $posts= post::create([
             'title'=>$request->title,
             'dis'=>$request->dis,
             'contents'=>$request->contents,
-            'image'=> $image
-
+            'publish_at'=>$request->publish_at,
+            'image'=> $image,
+             'category_id'=>$request->category
         ]);
+        if ($request->tags){
+            $posts->tag()->attach($request->tags);
+        }
         session()->flash('success','well don');
         return redirect(route('posts.index'));
     }
@@ -74,9 +89,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(post $post)
     {
-        //
+        return view('posts.create')->with( 'posts',$post )->with('categorys',category::all())->with('tags',Tags::all());
+
+
+
     }
 
     /**
@@ -86,16 +104,43 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(postupdateRequest $request ,post $post)
     {
-        //
+        $data=$request->only(['title','dis','contents','publish_at']);
+
+        if ($request->hasFile('image'))
+        {
+            $image=$request->image->store();
+           $post->deleteimage();
+            $data['image']=$image;
+
+        }
+        if ($request->tags){
+            $post->tag()->sync($request->tags);
+        }
+
+
+       $post->update($data);
+        session()->flash('success','edit don');
+        return redirect(route('posts.index'));
     }
 
 
-    public function destroy(post $post)
+    public function destroy($id)
     {
+        $post=post::withTrashed()->where('id', $id)->firstOrFail();
 
-        $post->delete();
+      $post->delete();
+
+        if ($post->trashed())
+        {
+            $post->deleteimage();
+            $post->delete();
+        }
+        else{
+            $post->delete();
+        }
+
         session()->flash('success','well don');
         return redirect(route('posts.index'));
 
@@ -105,7 +150,16 @@ class PostsController extends Controller
 
     public function trash()
     {
-        $trash= post::withTrashed()->get();
-        return view('posts.index')->with('po',$trash);
+        $trash= post::onlyTrashed()->get();
+        return view('posts.index')->with('posts',$trash);
     }
+
+    public function restore($id)
+    {
+        $post=post::withTrashed()->where('id', $id)->firstOrFail();
+        $post->restore();
+        session()->flash('success','restore don');
+        return redirect(route('posts.index'));
+    }
+
 }
