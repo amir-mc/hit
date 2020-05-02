@@ -21,7 +21,8 @@
             @foreach($tag as $tags)
             <tr><td>{{$tags->name}}</td>
                 <td>{{$tags->post->count()}}</td>
-
+/**
+**/
             <td>
 
                 <a href="{{route('tags.edit', $tags->id)}}" class="btn btn-info">edit</a>
