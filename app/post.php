@@ -13,6 +13,7 @@ class post extends Model
     protected $fillable=['title','dis','contents','image','publish_at','category_id'];
 
 
+
     public function deleteimage()
     {
         Storage::delete($this->image);
@@ -21,5 +22,15 @@ class post extends Model
     public function category()
     {
         return $this->belongsTo(category::class);
+    }
+
+    public function tag()
+    {
+        return $this->belongsToMany(Tags::class);
+    }
+
+    public function hastag($tagid)
+    {
+        return in_array($tagid,$this->tag->pluck('id')->toArray());
     }
 }
