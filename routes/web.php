@@ -28,7 +28,10 @@ Route::middleware(['auth'])->group(function (){
     Route::resource('tags','TagController');
     Route::get('trash-post','PostsController@trash')->name('trash.posts.index');
     Route::put('restore/{post}','PostsController@restore')->name('post.restore');
-//php artisan config:cache
+
+});
+Route::middleware(['auth','admin'])->group(function (){
+    Route::get('user','userController@index')->name('users.index');
 });
 
 
