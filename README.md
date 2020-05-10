@@ -3,7 +3,12 @@
 hit is a  baseical cms laravel  - 
 <center> </center>
 <p align="center">start at 10:59 in 4/16/2020</p>
-<p align="center" style="color: #ff0000">is not completed</p>
-<p align="center">
-  <img alt="noting" title="!" width="400" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTIwozIPSH0Pcz5FpxY8SlNOiLBvyHzR5j_p3Q7_4tMuPjAHrak&usqp=CAU">
+<p align="center" style="color: #ff0000"> completed</p>
+<p align="center" style="font-size: 50px">
+  <img alt="noting" title="!" width="400" src="https://en.pimg.jp/055/077/640/1/55077640.jpg">
+ سیستم مدیریت محتوا هیت تقریبا امادست یه پروژه ساده جهت ارائه دانشجویی یا استفاده شخصی که با فریم فورک لاراول نوشته شده البته یه سری خورده کاری داره ولی در هرصورت اگر پروژه رو خواستید میتونید به من ایمیل بزنید این پروژه ای که در گیت هست سورس کد اصلیه و شما برای اجرا به فایل دیتا بیس و seed و vonder احتیاج دارید که من اون اینا رو تو گیت نزاشتم و نمیزارم با من در ایمیل همراه باشید   
+
 </p>
+<p align="center" style="font-size: 60px">
+  Email:amirfooladi93@gmail.com
+  </p>
