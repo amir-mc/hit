@@ -14,6 +14,6 @@ hit is a  baseical cms laravel  -
 
 </p>
 <p align="center" style="font-size: 60px">
-  Email:amirfooladi93@gmail.com
+  Email:amirfooladi93@gmail.com</br>
  Sunday, Ordibehesht 21, 1399
   </p>
