@@ -14,7 +14,11 @@ hit is a  baseical cms laravel  -
  </p>
  <p align="center">
  
- <img alt="noting"  title="!" width="400" src="https://en.pimg.jp/055/077/640/1/55077640.jpg">
+ <img alt="noting"  title="!" width="400" src="https://imgur.com/ZbIkQ9p.jpg">
+ </p>
+ <p align="center">
+ 
+ <img alt="noting"  title="!" width="400" src="https://imgur.com/MZVLAwS.jpg">
  </p>
 <p align="center" style="font-size: 50px" dir="rtl">
  
