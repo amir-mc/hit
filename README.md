@@ -13,13 +13,14 @@ hit is a  baseical cms laravel  -
  <img alt="noting"  title="!"  src="https://imgur.com/EFHYHcy.jpg">
  </p>
  <p align="center">
- 
+ <hr>
  <img alt="noting"  title="!"  src="https://imgur.com/ZbIkQ9p.jpg">
  </p>
  <p align="center">
- 
+ <hr>
  <img alt="noting"  title="!" src="https://imgur.com/MZVLAwS.jpg">
  </p>
+ <hr>
 <p align="center" style="font-size: 50px" dir="rtl">
  
  سیستم مدیریت محتوا هیت تقریبا امادست یه پروژه ساده جهت ارائه دانشجویی یا استفاده شخصی که با فریم فورک لاراول نوشته شده البته یه سری خورده کاری داره ولی در هرصورت اگر پروژه رو خواستید یا نحوه کار کردن چطور اجرا کردن میتونید به من ایمیل بزنید این پروژه ای که در گیت هست سورس کد اصلیه و شما برای اجرا به فایل دیتا بیس و سیید و وندر احتیاج دارید که من اون اینا رو تو گیت نزاشتم و نمیزارم و یک سری پروژه های تجاری هم هست در کل در ایمیل با من میتونید همراه باشید   
