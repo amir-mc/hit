@@ -10,15 +10,15 @@ hit is a  baseical cms laravel  -
  </p>
  <p align="center">
  
- <img alt="noting"  title="!" width="400" src="https://imgur.com/EFHYHcy.jpg">
+ <img alt="noting"  title="!"  src="https://imgur.com/EFHYHcy.jpg">
  </p>
  <p align="center">
  
- <img alt="noting"  title="!" width="400" src="https://imgur.com/ZbIkQ9p.jpg">
+ <img alt="noting"  title="!"  src="https://imgur.com/ZbIkQ9p.jpg">
  </p>
  <p align="center">
  
- <img alt="noting"  title="!" width="400" src="https://imgur.com/MZVLAwS.jpg">
+ <img alt="noting"  title="!" src="https://imgur.com/MZVLAwS.jpg">
  </p>
 <p align="center" style="font-size: 50px" dir="rtl">
  
