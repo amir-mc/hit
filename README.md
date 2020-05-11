@@ -10,11 +10,7 @@ hit is a  baseical cms laravel  -
  </p>
  <p align="center">
  
- <blockquote class="imgur-embed-pub" lang="en" data-id="a/ETEES8y"><a href="//imgur.com/a/ETEES8y"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
- </p>
- <p align="center">
- 
- <img alt="noting"  title="!" width="400" src="https://en.pimg.jp/055/077/640/1/55077640.jpg">
+ <img alt="noting"  title="!" width="400" src="https://imgur.com/EFHYHcy.jpg">
  </p>
  <p align="center">
  
