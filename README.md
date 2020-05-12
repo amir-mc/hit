@@ -4,9 +4,9 @@
 
 
 
-![framework laravel](https://img.shields.io/badge/Platform-windows-lightgrey.svg)
-![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/filp/whoops.svg?style=flat-square)
-![php ](https://img.shields.io/pypi/pyversions/Django.svg)
+![php](https://img.shields.io/packagist/php-v/symfony/symfony?label=php)
+![c](https://img.shields.io/coveralls/github/jekyll/jekyll)
+![php ](https://img.shields.io/appveyor/tests/NZSmartie/coap-net-iu0to)
 
 hit is a  baseical cms laravel  - 
 <center> </center>
