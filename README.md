@@ -1,5 +1,13 @@
 # hit project 
 
+
+
+
+
+![framework laravel](https://img.shields.io/badge/Platform-windows-lightgrey.svg)
+![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/filp/whoops.svg?style=flat-square)
+![php ](https://img.shields.io/pypi/pyversions/Django.svg)
+
 hit is a  baseical cms laravel  - 
 <center> </center>
 <p align="center">start at 10:59 in 4/16/2020</p>
